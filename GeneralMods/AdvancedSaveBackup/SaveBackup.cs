@@ -111,6 +111,7 @@ namespace Omegasis.SaveBackup
                 fastZip.UseZip64 = UseZip64.Off;
                 bool recurse = true;  // Include all files by recursing through the directory structure
                 string filter = null; // Dont filter any files at all
+                Directory.CreateDirectory(folderPath);
                 fastZip.CreateZip(Path.Combine(folderPath, $"backup-{DateTime.Now:yyyyMMdd'-'HHmmss}.zip"), Constants.TargetPlatform != GamePlatform.Android ? SaveBackup.SavesPath : SaveBackup.AndroidCurrentSavePath, recurse, filter);
                 new DirectoryInfo(folderPath)
                 .EnumerateFiles()
