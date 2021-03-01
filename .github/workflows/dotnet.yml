@@ -21,4 +21,4 @@ jobs:
       run: >
         cd "GeneralMods/SaveAnywhere" &&
         dotnet restore &&
-        dotnet build --no-restore
+        dotnet build --no-restore -p:GamePath=Result
