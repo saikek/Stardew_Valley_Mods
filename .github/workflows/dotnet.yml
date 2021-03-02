@@ -20,6 +20,6 @@ jobs:
     - name: build project
       run: >
         cd "GeneralMods/SaveAnywhere" &&
-        mkidr Result &&
+        mkdir Result &&
         dotnet restore -p:GamePath=Result &&
         dotnet build --no-restore -p:GamePath=Result
